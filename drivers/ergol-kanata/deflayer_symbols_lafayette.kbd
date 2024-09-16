@@ -31,10 +31,14 @@
   ⁹ (unicode ⁹)
   ⁰ (unicode ⁰)
 
-  ;; TODO: dead ^
+  d^ (tap-dance 5000 (
+    (one-shot-press 5000 (layer-while-held circumflex))
+  ))
   ≤ (unicode ≤)
   ≥ (unicode ≥)
-  ;; TODO: dead ¤
+  d¤ (tap-dance 5000 (
+    (one-shot-press 5000 (layer-while-held currency))
+  ))
   ;; TODO: dead ˚
   × (unicode ×)
   ;; TODO: dead '
@@ -58,6 +62,53 @@
   ;; TODO: dead ˘
 )
 
+;; dead circumflex layer aliases
+(defalias
+  ĉ (t! dk-sft ĉ Ĉ)
+  ô (t! dk-sft ô Ô)
+  ŵ (t! dk-sft ŵ Ŵ)
+  ĵ (t! dk-sft ĵ Ĵ)
+  ŷ (t! dk-sft ŷ Ŷ)
+
+  â (t! dk-sft â Â)
+  ŝ (t! dk-sft ŝ Ŝ)
+  ê (t! dk-sft ê Ê)
+  î (t! dk-sft î Î)
+  û (t! dk-sft û Û)
+
+  ẑ (t! dk-sft ẑ Ẑ)
+  ⁻ (unicode ⁻)
+  · (unicode ·)
+  ĥ (t! dk-sft ĥ Ĥ)
+  ĝ (t! dk-sft ĝ Ĝ)
+)
+
+;; dead currency layer aliases
+(defalias
+  c¢ (t! dk-sft ¢ ₡)
+  ௹ (t! dk-sft ௹ ૱)
+  ₰ (t! dk-sft ₰ ₧)
+  ₩ (unicode ₩)
+  ₥ (t! dk-sft ₥ ℳ)
+  ₫ (t! dk-sft ₫ ₯)
+  ¥ (t! dk-sft ¥ 円)
+
+  ؋ (t! dk-sft ؋ ₳)
+  ₪ (t! dk-sft ₪ $)
+  € (t! dk-sft € ₠)
+  ₦ (unicode ₦)
+  ƒ (t! dk-sft ƒ ₣)
+  £ (t! dk-sft £ ₤)
+  ₢ (t! dk-sft ₢ ₨)
+  ৳ (t! dk-sft ৳ ₮)
+  ﷼ (t! dk-sft ﷼ ៛)
+  元 (t! dk-sft 元 圓)
+
+  ฿ (t! dk-sft ฿ ₱)
+  ₴ (unicode ₴)
+  ₲ (unicode ₲)
+)
+
 (deflayer symbols
   XX   @₁   @₂   @₃   @₄   @₅   XX   @₆   @₇   @₈   @₉   @₀   XX XX
        @^   @<   @>   @$   @%        @@   @&   @*   @'   @`   XX XX
@@ -71,9 +122,25 @@
 ;;       supposed to have any effect.
 (deflayer symbolsSft
   XX   @¹   @²   @³   @⁴   @⁵   XX   @⁶   @⁷   @⁸   @⁹   @⁰   XX XX
-       _    @≤   @≥   _    @‰        _    XX   @×   _    _    XX XX
+       @d^  @≤   @≥   @d¤  @‰        _    XX   @×   _    _    XX XX
        _    XX   XX   _    @≠        _    @±   _    @÷   _    XX XX
        _    _    _    @–   XX   XX   @¦   @¬   _    @:   _
+  _              _             spc        _              _
+)
+
+(deflayer circumflex
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX XX
+       _    @ĉ   @ô   _    @ŵ        @ĵ   _    _    XX   @ŷ   XX XX
+       @â   @ŝ   @ê   _    _         _    _    _    @î   @û   XX XX
+       @ẑ   _    @⁻   _    _    XX   @·   @ĥ   @ĝ   _    _
+  _              _             spc        _              _
+)
+
+(deflayer currency
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX XX
+       _    @c¢   @௹   @₰   @₩        _    @₥   @₫   _    @¥   XX XX
+       @؋   @₪   @€   @₦   @ƒ        @£   @₢   @৳   @﷼   @元  XX XX
+       _    _    @-   _    @฿   XX   _    @₴   @₲   _    _
   _              _             spc        _              _
 )
 
