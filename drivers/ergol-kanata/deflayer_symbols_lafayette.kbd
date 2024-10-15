@@ -1,9 +1,15 @@
 ;; Symbol layers
 
-;; main symbols layer aliases
+;; shifted layers
 (defalias
   sym2 (layer-while-held symbolsSft)
 
+  ;; FIXME: Layer should be exited after key press. How to implement that?
+  cir2 (layer-while-held circumflexSft)
+)
+
+;; main symbols layer aliases
+(defalias
   ;; subscript digits
   ₁ (unicode ₁)
   ₂ (unicode ₂)
@@ -64,7 +70,9 @@
   ⁹ (unicode ⁹)
   ⁰ (unicode ⁰)
 
-  ;; TODO: dead ^
+  d^ (tap-dance 5000 (
+    (one-shot-press 5000 (layer-while-held circumflex))
+  ))
   ≤ (unicode ≤)
   ≥ (unicode ≥)
   ;; TODO: dead ¤
@@ -91,6 +99,44 @@
   ;; TODO: dead ˘
 )
 
+;; dead circumflex layer aliases
+(defalias
+  ^ĉ (unicode ĉ)
+  ^ô (unicode ô)
+  ^ŵ (unicode ŵ)
+  ^ĵ (unicode ĵ)
+  ^ŷ (unicode ŷ)
+
+  ^â (unicode â)
+  ^ŝ (unicode ŝ)
+  ^ê (unicode ê)
+  ^î (unicode î)
+  ^û (unicode û)
+
+  ^ẑ (unicode ẑ)
+  ^⁻ (unicode ⁻)
+  ^· (unicode ·)
+  ^ĥ (unicode ĥ)
+  ^ĝ (unicode ĝ)
+)
+
+;; dead circumflex layer aliases (shifted)
+(defalias
+  ^Ĉ (unicode Ĉ)
+  ^Ô (unicode Ô)
+  ^Ŵ (unicode Ŵ)
+  ^Ĵ (unicode Ĵ)
+  ^Ŷ (unicode Ŷ)
+  ^Â (unicode Â)
+  ^Ŝ (unicode Ŝ)
+  ^Ê (unicode Ê)
+  ^Î (unicode Î)
+  ^Û (unicode Û)
+  ^Ẑ (unicode Ẑ)
+  ^Ĥ (unicode Ĥ)
+  ^Ĝ (unicode Ĝ)
+)
+
 (deflayer symbols
   XX   @₁   @₂   @₃   @₄   @₅   XX   @₆   @₇   @₈   @₉   @₀   XX XX
        @^   @<   @>   @$   @%        @@   @&   @*   @'   @`   XX XX
@@ -104,9 +150,25 @@
 ;;       supposed to have any effect.
 (deflayer symbolsSft
   XX   @¹   @²   @³   @⁴   @⁵   XX   @⁶   @⁷   @⁸   @⁹   @⁰   XX XX
-       _    @≤   @≥   _    @‰        _    XX   @×   _    _    XX XX
+       @d^  @≤   @≥   _    @‰        _    XX   @×   _    _    XX XX
        _    XX   XX   _    @≠        _    @±   _    @÷   _    XX XX
        _    _    _    @–   XX   XX   @¦   @¬   _    @:   _
+  _              _             spc        _              _
+)
+
+(deflayer circumflex
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX XX
+       XX   @^ĉ  @^ô  XX   @^ŵ       @^ĵ  XX   XX   XX   @^ŷ  XX XX
+       @^â  @^ŝ  @^ê  XX   XX        XX   XX   XX   @^î  @^û  XX XX
+       @^ẑ  XX   @^⁻  XX   XX   XX   @^·  @^ĥ  @^ĝ  XX   _
+  @cir2          _             spc        _              @cir2
+)
+
+(deflayer circumflexSft
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX XX
+       XX   @^Ĉ  @^Ô  XX   @^Ŵ       @^Ĵ  XX   XX   XX   @^Ŷ  XX XX
+       @^Â  @^Ŝ  @^Ê  XX   XX        XX   XX   XX   @^Î  @^Û  XX XX
+       @^Ẑ  XX   XX   XX   XX   XX   XX   @^Ĥ  @^Ĝ  XX   _
   _              _             spc        _              _
 )
 
