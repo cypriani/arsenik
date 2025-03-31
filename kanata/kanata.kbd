@@ -18,7 +18,7 @@
   ;; The key must be held 200ms to become a layer shift.
   hold_timeout 200
   ;; Slightly higher value for typing keys, to prevent unexpected hold effect.
-  long_hold_timeout 300
+  long_hold_timeout 200
 )
 
 ;;-----------------------------------------------------------------------------
@@ -42,9 +42,9 @@
 ;; `Base` layer: standard or dual keys? (layer-taps, homerow mods?)
 ;; If you just want angle mod, you still have to enable the standard base.
 
-(include deflayer/base.kbd)  ;; standard keyboard behavior
+;; (include deflayer/base.kbd)  ;; standard keyboard behavior
 ;; (include deflayer/base_lt.kbd)  ;; layer-taps on both thumb keys
-;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
+(include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
 
@@ -52,17 +52,17 @@
 ;;-----------------------------------------------------------------------------
 ;; `Symbols` layer
 
-(include deflayer/symbols_noop.kbd)  ;; AltGr stays as-is
+;;(include deflayer/symbols_noop.kbd)  ;; AltGr stays as-is
 ;; (include deflayer/symbols_lafayette.kbd)  ;; AltGr programmation layer like Ergo‑L
-;; (include deflayer/symbols_noop_num.kbd)  ;; AltGr stays as-is + NumRow layers
+(include deflayer/symbols_noop_num.kbd)  ;; AltGr stays as-is + NumRow layers
 ;; (include deflayer/symbols_lafayette_num.kbd)  ;; AltGr prog layer + NumRow layers
 
 
 ;;-----------------------------------------------------------------------------
 ;; `Navigation` layer: ESDF or HJKL?
 
-(include deflayer/navigation.kbd)  ;; ESDF on the left, NumPad on the right
-;; (include deflayer/navigation_vim.kbd)  ;; HJKL + NumPad on [Space]+[Q]
+;;(include deflayer/navigation.kbd)  ;; ESDF on the left, NumPad on the right
+(include deflayer/navigation_vim.kbd)  ;; HJKL + NumPad on [Space]+[Q]
 
 ;; Replace XX by the keyboard shortcut of your application launcher, if any.
 ;; Mapped on [Space]+[P] in both navigation layers.
