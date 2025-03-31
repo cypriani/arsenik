@@ -5,6 +5,7 @@
   q    w    e    r    t         y    u    i    o    p
   a    @ss  @dd  @ff  g         h    @jj  @kk  @ll  ;
   z    x    c    v    b    <    n    m    ,    .    /
+  @num      @mnk                          @hnk
             @sft          @nav            @sym
 )
 
@@ -26,6 +27,10 @@
   jj (tap-hold $tap_timeout $long_hold_timeout j lalt)
   kk (tap-hold $tap_timeout $long_hold_timeout k rctl)
   ll (tap-hold $tap_timeout $long_hold_timeout l rmet)
+
+  ;; TM2030 extra thumb keys
+  mnk (tap-hold-press $tap_timeout $hold_timeout spc (layer-while-held funpad))
+  hnk (tap-hold-press $tap_timeout $hold_timeout spc (layer-while-held numrow))
 )
 
 ;; vim: set ft=lisp

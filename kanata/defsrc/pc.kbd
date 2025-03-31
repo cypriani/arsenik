@@ -5,7 +5,13 @@
   q    w    e    r    t         y    u    i    o    p
   a    s    d    f    g         h    j    k    l    ;
   z    x    c    v    b    <    n    m    ,    .    /
+  menu      mhnk                          henk
             lalt          spc             ralt
 )
+
+;; TypeMatrix 2030 "kana" keys:
+;; In 106-key mode (Fn + F3), the TM2030's "shuffle" and "desktop" keys
+;; become the Muhenkan (mhnk) and Henkan (henk) keys, respectively. They
+;; make a nice set of extra thumb keys.
 
 ;; vim: set ft=lisp
