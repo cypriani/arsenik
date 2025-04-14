@@ -9,28 +9,28 @@
 ;; Choose here if you want to add an angle mod: ZXCVB are shifted to the left.
 ;; See https://colemakmods.github.io/ergonomic-mods/angle.html for more details.
 
-(include defsrc_pc.kbd)  ;; PC, standard finger assignment
-;;(include defsrc_pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
+(include defsrc/pc.kbd)  ;; PC, standard finger assignment
+;;(include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
 
 
 ;;-----------------------------------------------------------------------------
 ;; Base keymap
 
-(include deflayer_base_over_azerty.kbd)  ;; Azerty-FR
+(include deflayer/base_over_azerty.kbd)  ;; Azerty-FR
 
 
 ;;-----------------------------------------------------------------------------
 ;; `Symbols` layer
 ;; You need this, don’t disable it.
 
-(include deflayer_symbols_lafayette.kbd)
+(include deflayer/symbols_lafayette.kbd)
 
 
 ;;-----------------------------------------------------------------------------
 ;; Aliases for `Symbols` and `Navigation` layers
 ;; Depends on PC/Mac and keyboard layout
 
-(include defalias_azerty_pc.kbd)  ;; Azerty-FR, PC
+(include defalias/azerty_pc.kbd)  ;; Azerty-FR, PC
 
 
 ;;-----------------------------------------------------------------------------
