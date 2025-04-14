@@ -25,12 +25,16 @@
 ;; Original key arrangement on your keyboard: Mac or PC.
 ;; Choose here if you want to add an angle mod: ZXCVB are shifted to the left.
 ;; See https://colemakmods.github.io/ergonomic-mods/angle.html for more details.
+;; For wide angle mod, you must pick the arrangement depending on your
+;; keyboard: ISO (a.k.a. 102/105 keys) or ANSI (a.k.a. 101/104 keys).
 
 (include defsrc/pc.kbd)  ;; PC, standard finger assignment
+;; (include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left (ISO)
+;; (include defsrc/pc_ansi_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left (ANSI)
+;; (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key (ISO)
+;; (include defsrc/pc_ansi_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key (ANSI)
 ;; (include defsrc/mac.kbd)  ;; Mac, standard finger assignment
-;; (include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
 ;; (include defsrc/mac_anglemod.kbd)  ;; Mac, ZXCVB are shifted to the left
-;; (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
 ;; (include defsrc/mac_wide_anglemod.kbd)  ;; Mac, angle-mod + right hand shifted by one key
 
 
