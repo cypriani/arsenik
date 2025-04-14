@@ -10,7 +10,8 @@
 ;; See https://colemakmods.github.io/ergonomic-mods/angle.html for more details.
 
 (include defsrc/pc.kbd)  ;; PC, standard finger assignment
-;;(include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
+;; (include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left
+;; (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key
 
 
 ;;-----------------------------------------------------------------------------
